@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using ToDoListWebAPI.Models;
 
 namespace ToDoListWebAPI
 {
@@ -26,6 +28,8 @@ namespace ToDoListWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            var connection = @"Server=tcp:kavisample.database.windows.net,1433;Initial Catalog=ToDoList;Persist Security Info=False;User ID=kavinambiar;Password=Deepak020895;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            services.AddDbContext<MyDatabaseContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -28,7 +28,8 @@ namespace ToDoListWebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = @"Server=tcp:kavisample.database.windows.net,1433;Initial Catalog=ToDoList;Persist Security Info=False;User ID=kavinambiar;Password=Deepak020895;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            //AzureConnectionString is secret.
+            var connection = @"AzureConnectionString";
             services.AddDbContext<MyDatabaseContext>(options => options.UseSqlServer(connection));
         }
 

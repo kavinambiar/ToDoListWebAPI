@@ -5,7 +5,7 @@ using ToDoListWebAPI.Models;
 
 namespace ToDoListWebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/ToDo")]
     [ApiController]
     public class TodoController : ControllerBase
     {
